@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'custom_shape_clipper.dart';
 import 'customAppBar.dart';
+import 'flight_list.dart';
 
 void main() => runApp(new MaterialApp(
 	title: "Flight List Mock Up",
@@ -136,7 +137,14 @@ class __HomeScreenTopPartState extends State<_HomeScreenTopPart> {
 												suffixIcon: Material(
 													elevation: 2.0,
 													borderRadius: BorderRadius.all(Radius.circular(30.0)),
-													child: Icon(Icons.search, color: Colors.black,),
+													child: InkWell(
+                            child: Icon(Icons.search, color: Colors.black,),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => FlightListingScreen()
+                              ));
+                            },
+                          ),
 												),
 											),
 										),
